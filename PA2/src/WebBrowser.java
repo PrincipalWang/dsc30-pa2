@@ -22,6 +22,7 @@ public class WebBrowser {
     private MyStack next;
 
     private static final String DEFAULT_PAGE = "google.com";
+    private static final int HUNDRED = 100;
 
     /**
      * empty constructor
@@ -29,8 +30,8 @@ public class WebBrowser {
     public WebBrowser() {
         currentPage = DEFAULT_PAGE;
         history = new ArrayList<String>();
-        prev = new MyStack(100);
-        next = new MyStack(100);
+        prev = new MyStack(HUNDRED);
+        next = new MyStack(HUNDRED);
     }
 
     /**

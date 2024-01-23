@@ -16,6 +16,8 @@ public class MyStack {
 
     String[] mysta;
     int size;
+
+    private static final int TEN = 10;
             
     /**
      * constructor of mystack
@@ -35,7 +37,7 @@ public class MyStack {
      * empty constructor of mystack
      * */
     public MyStack() {
-        mysta = new String[10];
+        mysta = new String[TEN];
         size = 0;
     }
 
@@ -139,6 +141,7 @@ public class MyStack {
     /**
      * pop multiple elements at the same time
      *
+     * @param amount amount of elements popped
      * @return elements popped
      * @throws IllegalArgumentException if amount is not a positive number
      * */

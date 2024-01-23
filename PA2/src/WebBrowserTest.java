@@ -36,10 +36,20 @@ class WebBrowserTest {
             assertEquals(res1.get(i), res2.get(i));
         }
         assertTrue(web1.findLink("a.com"));
-        assertTrue(web1.findLink("google.com"));
-        assertFalse(web1.findLink("b.com"));
         web1.clearHistory();
+        web1.newTab();
+        web1.openNewPage("google.com");
+        assertTrue(web1.findLink("google.com"));
+        web1.clearHistory();
+        web1.newTab();
+        assertFalse(web1.findLink("b.com"));
+        web1.openNewPage("b.com");
         ArrayList<String> res3 = web1.getHistory();
+        assertEquals(1,res2.size());
+        assertEquals("b.com",res2.get(0));
+        assertFalse(web1.findLink("google.com"));
+        web1.clearHistory();
+        ArrayList<String> res4 = web1.getHistory();
         assertEquals(0,res2.size());
     }
 }
