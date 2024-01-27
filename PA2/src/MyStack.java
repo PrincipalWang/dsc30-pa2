@@ -54,9 +54,7 @@ public class MyStack {
      * clear the stack
      * */
     public void clear() {
-        for(int i = 0 ; i < mysta.length ; i++){
-            mysta[i] = null;
-        }
+        mysta = new String[mysta.length];
         size=0;
     }
 
